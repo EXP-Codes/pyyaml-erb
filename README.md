@@ -1,6 +1,6 @@
-# pypi-template
+# pyyaml-erb
 
-> pypi 开发模板
+> 识别 yaml 配置文件中的 python 代码，用于环境变量注入
 
 ------
 
