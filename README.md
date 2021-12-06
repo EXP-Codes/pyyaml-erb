@@ -1,6 +1,6 @@
 # pyyaml-erb
 
-> 识别 yaml 配置文件中的 python 代码，用于环境变量注入
+> 用于解析 yaml 配置文件中设置为环境变量的 python 代码
 
 ------
 
@@ -11,13 +11,14 @@
 
 ## 使用说明
 
-1. 创建 Github Repository 时选择这个仓库做模板
-2. 在 [PyPI](https://pypi.org/) 上注册一个帐号，密码设置到 Github Repository -> Settings -> Secrets，即为配置文件 [`autorun.yml`](./.github/workflows/autorun.yml) 添加环境变量 `pypi_password`，用于 Github Workflows 自动发版
-3. 在 [src](./src) 目录中创建代码
-4. 修改 [setup.py](./setup.py) 中的 `FIXME` ，按实际修改发版信息
+参考 Ruby 的 ERB
 
 
 ## 开发者说明
+
+<details>
+<summary>展开</summary>
+<br/>
 
 ### 手动打包项目
 
@@ -74,6 +75,7 @@ twine upload dist/*
 - [python package 开发指引](https://packaging.python.org/#python-packaging-user-guide)
 - [python package 示例代码](https://github.com/pypa/sampleproject)
 
+</details>
 
 ## 赞助途径
 

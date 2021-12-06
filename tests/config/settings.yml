@@ -1,0 +1,20 @@
+base:
+  filepath: './tmp/or.cache'
+  charset: 'utf-8'
+  loop_interval: 10800
+  app_name: <%= ENV['APP_NAME'] %>
+
+arg_list:
+  - 'exp'
+  - 22
+  - "<%= ENV['JAVA_HOME'] || 'default' %>"
+  - ''
+
+database:
+  dbtype: "<%= ENV['DB_TYPE'] or mysql %>"
+  host: '<%= ENV["DB_HOST"] or "127.0.0.1" %>'
+  port: <%= ENV['DB_PORT'] || 3306 %>
+  db_name: "<%= ENV['DB_NAME'] || null %>"
+  username: "<%= ENV['DB_USER'] or none %>"
+  password: "<%= ENV['DB_PASS'] || nil %>"
+  encoding: "<%= ENV['DB_ENCODING'] || 'None' %>"
