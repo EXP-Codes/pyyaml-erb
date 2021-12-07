@@ -9,7 +9,7 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)) + '/../')
 # ----------------------------------------------------------------------
 
 import unittest
-import src.yaml_erb as yaml
+import src.erb.yml as yaml
 
 
 class TestYamlERB(unittest.TestCase):

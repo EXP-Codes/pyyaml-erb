@@ -16,6 +16,14 @@
 
 ## 使用说明
 
+在代码中引入 pyyaml-erb 包，读取配置 yml 配置文件即可：
+
+```python
+import erb.yml as yaml
+with open(SETTING_PATH, 'r', encoding='utf-8') as file :
+    settings = yaml.load(file.read())
+```
+
 配置示例可参考 [settings.yml](./tests/config/settings.yml)，使用教程可参考单元测试 [test_yaml_erb.py](./tests/test_yaml_erb.py)。
 
 例如环境变量为 `JAVA_HOME`，只需要在 yaml 配置为 `<%= ENV["JAVA_HOME"] %>` 的值表达式即可识别并解析。
@@ -35,6 +43,8 @@
 > 引号用双引号或单引号都可以，值表达式外围用不用引号包围都可以，表达式之间用 `||` 或 `or` 都可以
 
 
+
+
 ## 开发者说明
 
 <details>
@@ -50,10 +60,10 @@
 python setup.py sdist
 
 # 本地安装（测试用）
-pip install .\dist\pypdm-db-?.?.?.tar.gz
+pip install .\dist\pyyaml-erb-?.?.?.tar.gz
 
 # 本地卸载
-pip uninstall pypdm-db
+pip uninstall pyyaml-erb
 ```
 
 ### 手动发布项目
