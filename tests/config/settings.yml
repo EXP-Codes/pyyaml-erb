@@ -3,12 +3,8 @@ base:
   charset: 'utf-8'
   loop_interval: 10800
   app_name: <%= ENV['APP_NAME'] %>
-
-arg_list:
-  - 'exp'
-  - 22
-  - "<%= ENV['JAVA_HOME'] || 'default' %>"
-  - ''
+  threadpool:
+    worker: <%= ENV['WORKER'] || 10 %>
 
 database:
   dbtype: "<%= ENV['DB_TYPE'] or mysql %>"
@@ -18,3 +14,10 @@ database:
   username: "<%= ENV['DB_USER'] or none %>"
   password: "<%= ENV['DB_PASS'] || nil %>"
   encoding: "<%= ENV['DB_ENCODING'] || 'None' %>"
+
+arg_list:
+  - 'exp'
+  - 12.34
+  - "<%= ENV['JAVA_HOME'] || 'default' %>"
+  - ''
+

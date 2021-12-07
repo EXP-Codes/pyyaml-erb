@@ -23,12 +23,8 @@ class TestYamlERB(unittest.TestCase):
             self.assertEqual(settings['base']['charset'], 'utf-8')
             self.assertEqual(settings['base']['loop_interval'], 10800)
             self.assertIsNone(settings['base']['app_name'])
-
-            self.assertEqual(settings['arg_list'][0], 'exp')
-            self.assertEqual(settings['arg_list'][1], 22)
-            self.assertIsNotNone(settings['arg_list'][2])
-            self.assertEqual(settings['arg_list'][3], '')
-
+            self.assertEqual(settings['base']['threadpool']['worker'], 10)
+            
             self.assertEqual(settings['database']['dbtype'], 'mysql')
             self.assertEqual(settings['database']['host'], '127.0.0.1')
             self.assertEqual(settings['database']['port'], 3306)
@@ -36,6 +32,11 @@ class TestYamlERB(unittest.TestCase):
             self.assertIsNone(settings['database']['username'])
             self.assertIsNone(settings['database']['password'])
             self.assertIsNone(settings['database']['encoding'])
+
+            self.assertEqual(settings['arg_list'][0], 'exp')
+            self.assertEqual(settings['arg_list'][1], 12.34)
+            self.assertIsNotNone(settings['arg_list'][2])
+            self.assertEqual(settings['arg_list'][3], '')
             
 
 
