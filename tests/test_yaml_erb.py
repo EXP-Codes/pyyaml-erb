@@ -37,6 +37,8 @@ class TestYamlERB(unittest.TestCase):
             self.assertEqual(settings['arg_list'][1], 12.34)
             self.assertIsNotNone(settings['arg_list'][2])
             self.assertEqual(settings['arg_list'][3], '')
+            self.assertTrue(settings['arg_list'][4])
+            self.assertFalse(settings['arg_list'][5])
             
 
 

@@ -86,7 +86,12 @@ def _parse_text(text) :
             val = _remove_quotes(text)
 
     if val is not None and isinstance(val, str) :
-        val = None if (val.lower() == 'none' or val.lower() == 'null' or val.lower() == 'nil') else val
+        if val.lower() == 'none' or val.lower() == 'null' or val.lower() == 'nil' :
+            val = None
+        elif val.lower() == 'true' :
+            val = True
+        elif val.lower() == 'false' :
+            val = False
     return val
 
 

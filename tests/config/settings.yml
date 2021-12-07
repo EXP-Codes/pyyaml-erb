@@ -20,4 +20,6 @@ arg_list:
   - 12.34
   - "<%= ENV['JAVA_HOME'] || 'default' %>"
   - ''
+  - true
+  - false
 
