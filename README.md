@@ -16,7 +16,7 @@
 
 ## 使用说明
 
-配置示例可参考 [settings.yml](./tests/config/settings.yml)。
+配置示例可参考 [settings.yml](./tests/config/settings.yml)，使用教程可参考单元测试 [test_yaml_erb.py](./tests/test_yaml_erb.py)。
 
 例如环境变量为 `JAVA_HOME`，只需要在 yaml 配置为 `<%= ENV["JAVA_HOME"] %>` 的值表达式即可识别并解析。
 
