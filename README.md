@@ -43,8 +43,6 @@ with open(SETTING_PATH, 'r', encoding='utf-8') as file :
 > 引号用双引号或单引号都可以，值表达式外围用不用引号包围都可以，表达式之间用 `||` 或 `or` 都可以
 
 
-
-
 ## 开发者说明
 
 <details>
