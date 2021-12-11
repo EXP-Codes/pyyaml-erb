@@ -42,14 +42,17 @@ def _parse_expression(expression) :
         return expression
 
     value = None
-    mth = re.search(r'^<%=(.+)%>$', expression.strip())
-    if mth :
-        vals = re.split(r' \|\| | or ', mth.group(1))
+    mth0 = re.search(r'^<%=(.+)%>$', expression.strip())
+    if mth0 :
+        vals = re.split(r' \|\| | or ', mth0.group(1))
         for val in vals :
             val = val.strip()
-            mth = re.search(r'^ENV\[(.+)\]$', val)
-            if mth :
-                value = value or _parse_environment(mth.group(1))
+            mth1 = re.search(r'^ENV\[(.+)\]$', val)
+            mth2 = re.search(r'^\$\{(.+)\}$', val)
+            if mth1 :
+                value = value or _parse_environment(mth1.group(1))
+            elif mth2 :
+                value = value or _parse_environment(mth2.group(1))
             else :
                 value = value or _parse_text(val)
     else :

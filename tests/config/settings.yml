@@ -22,4 +22,5 @@ arg_list:
   - ''
   - true
   - false
+  - "<%= ${PATH} || '/bin/java' %>"
 

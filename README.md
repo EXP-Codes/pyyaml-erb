@@ -26,7 +26,7 @@ with open(SETTING_PATH, 'r', encoding='utf-8') as file :
 
 配置示例可参考 [settings.yml](./tests/config/settings.yml)，使用教程可参考单元测试 [test_yaml_erb.py](./tests/test_yaml_erb.py)。
 
-例如环境变量为 `JAVA_HOME`，只需要在 yaml 配置为 `<%= ENV["JAVA_HOME"] %>` 的值表达式即可识别并解析。
+例如环境变量为 `JAVA_HOME`，只需要在 yaml 配置为 `<%= ENV["KEY"] %>` 或 `<%= ${KEY} %>` 的值表达式即可识别并解析。
 
 一般而言，值表达式有以下几种配置模式：
 
@@ -40,7 +40,7 @@ with open(SETTING_PATH, 'r', encoding='utf-8') as file :
 - `key_8: <%= ENV["VAR_8"] || 1.23 %>`： 若环境变量不存在，会设置为默认值，且默认值会解析为浮点型
 - `key_9: <%= ENV["VAR_9"] || true %>`： 若环境变量不存在，会设置为默认值，且默认值会解析为布尔型
 - `key_10: <%= ENV["VAR_10"] || 'False' %>`： 若环境变量不存在，会设置为默认值，且默认值会解析为布尔型
-- `key_0: '<%= ENV["VAR_0"] || ENV["VAR_11"] or default %>'`： 混合模式
+- `key_0: '<%= ENV["VAR_0"] || ${VAR_11} or default %>'`： 混合模式
 
 > 引号用双引号或单引号都可以，值表达式外围用不用引号包围都可以，表达式之间用 `||` 或 `or` 都可以
 
