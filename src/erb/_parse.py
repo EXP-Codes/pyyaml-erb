@@ -38,7 +38,9 @@ def _parse_expression(expression) :
     :param expression: 表达式，格式形如 <%= ENV['JAVA_OME'] || 'default' %>
     :return: 解析表达式后的值
     '''
-    if expression is None or isinstance(expression, numbers.Number) :
+    if expression is None or \
+        isinstance(expression, numbers.Number) or \
+        isinstance(expression, dict) :
         return expression
 
     value = None
